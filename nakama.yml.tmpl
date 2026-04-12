@@ -1,0 +1,21 @@
+﻿database:
+  address:
+    - "${SUPABASE_DB_HOST}:5432/postgres?sslmode=require"
+  username: "${SUPABASE_DB_USER}"
+  password: "${SUPABASE_DB_PASS}"
+  ssl: true
+
+socket:
+  ws_port: 7350
+  ws_ping_period: 30s
+  max_message_rate: 30
+  max_presence_per_user: 5
+  session_encryption_key: "${SESSION_KEY}"
+
+runtime:
+  path: "/nakama/data/modules"
+  js_entrypoint: "index.js"
+
+logger:
+  level: "INFO"
+  stdout: true
