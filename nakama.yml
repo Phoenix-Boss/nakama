@@ -1,15 +1,12 @@
 ﻿database:
-  address: "postgres:l6TuVaUiqmhWbbVO@db.atojskxrxfsbpeefigtm.supabase.co:5432/postgres?sslmode=require"
-  conn_max_lifetime: 0
-  max_open_conns: 0
-  max_idle_conns: 0
+  address:
+    - "postgres:l6TuVaUiqmhWbbVO@db.atojskxrxfsbpeefigtm.supabase.co:5432/postgres?sslmode=require"
 
 socket:
   ws_port: 7350
-  ws_ping_period: 30s
-  max_message_rate: 30
-  max_presence_per_user: 5
-  session_encryption_key: "DaNjI20sbHAZBy3h86xCoTfMleidWELw"
+  ws_ping_period_ms: 30000
+  max_message_size_bytes: 4096
+  max_request_size_bytes: 131072
 
 runtime:
   path: "/nakama/data/modules"
