@@ -2,7 +2,8 @@
 
 RUN apt-get update && apt-get install -y gettext-base curl && rm -rf /var/lib/apt/lists/*
 
-COPY nakama.yml.tmpl /nakama/data/nakama.yml.tmpl
+# Copy the pre-configured nakama.yml directly
+COPY nakama.yml /nakama/data/nakama.yml
 COPY modules/ /nakama/data/modules/
 COPY start.sh /start.sh
 COPY keepalive.sh /keepalive.sh
