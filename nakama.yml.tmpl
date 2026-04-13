@@ -1,16 +1,18 @@
 ﻿database:
-  address:
-    - "${SUPABASE_DB_HOST}:5432/postgres?sslmode=require"
-  username: "${SUPABASE_DB_USER}"
-  password: "${SUPABASE_DB_PASS}"
+  address: "[2a05:d018:135e:16b9:e768:f0f3:e337:4a0]:5432/postgres?sslmode=require"
+  username: "postgres"
+  password: "l6TuVaUiqmhWbbVO"
   ssl: true
+  conn_max_lifetime: 0
+  max_open_conns: 0
+  max_idle_conns: 0
 
 socket:
   ws_port: 7350
   ws_ping_period: 30s
   max_message_rate: 30
   max_presence_per_user: 5
-  session_encryption_key: "${SESSION_KEY}"
+  session_encryption_key: "DaNjI20sbHAZBy3h86xCoTfMleidWELw"
 
 runtime:
   path: "/nakama/data/modules"
