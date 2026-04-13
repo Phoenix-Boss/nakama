@@ -1,8 +1,5 @@
 ﻿database:
-  address: "[2a05:d018:135e:16b9:e768:f0f3:e337:4a0]:5432/postgres?sslmode=require"
-  username: "postgres"
-  password: "l6TuVaUiqmhWbbVO"
-  ssl: true
+  address: "postgres:l6TuVaUiqmhWbbVO@db.atojskxrxfsbpeefigtm.supabase.co:5432/postgres?sslmode=require"
   conn_max_lifetime: 0
   max_open_conns: 0
   max_idle_conns: 0
