@@ -1,4 +1,4 @@
-﻿#!/bin/sh
+#!/bin/sh
 
 RENDER_URL="${RENDER_SERVICE_URL:-https://your-render-service.onrender.com}"
 PING_INTERVAL="${PING_INTERVAL:-300}"

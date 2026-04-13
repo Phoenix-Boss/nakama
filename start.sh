@@ -1,4 +1,4 @@
-﻿#!/bin/sh
+#!/bin/sh
 
 echo "=== Starting Nakama with Supabase Database ==="
 echo "Database host: db.atojskxrxfsbpeefigtm.supabase.co:5432"
