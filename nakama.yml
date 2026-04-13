@@ -1,12 +1,6 @@
 ﻿database:
   address:
-    - "postgres:l6TuVaUiqmhWbbVO@db.atojskxrxfsbpeefigtm.supabase.co:5432/postgres?sslmode=require"
-
-socket:
-  ws_port: 7350
-  ws_ping_period_ms: 30000
-  max_message_size_bytes: 4096
-  max_request_size_bytes: 131072
+    - "postgres.atojskxrxfsbpeefigtm:l6TuVaUiqmhWbbVO@aws-0-eu-west-1.pooler.supabase.com:6543/postgres?sslmode=require"
 
 runtime:
   path: "/nakama/data/modules"
