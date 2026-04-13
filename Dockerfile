@@ -7,7 +7,7 @@ COPY nakama.yml /nakama/data/nakama.yml
 
 # Copy modules (create dir first in case it's empty)
 RUN mkdir -p /nakama/data/modules
-COPY index.js /nakama/data/modules/index.js
+COPY modules/index.js /nakama/data/modules/index.js
 
 # Copy scripts
 COPY start.sh /start.sh
