@@ -14,9 +14,6 @@ runtime:
   path: "/nakama/data/modules"
   js_entrypoint: "index.js"
   js_cache: true
-  env:
-    - name: "NAKAMA_ENV"
-      value: "production"
 
 # Socket Configuration
 socket:
@@ -27,15 +24,15 @@ socket:
 # HTTP Configuration
 http:
   port: 7350
-  max_body_size: 3145728  # 3MB
+  max_body_size: 3145728
   write_timeout_ms: 5000
   read_timeout_ms: 5000
   idle_timeout_ms: 60000
 
 # Session Configuration
 session:
-  token_expiry_seconds: 7200  # 2 hours
-  refresh_token_expiry_seconds: 604800  # 7 days
+  token_expiry_seconds: 7200
+  refresh_token_expiry_seconds: 604800
   encryption_key: "DaNjI20sbHAZBy3h86xCoTfMleidWELw"
   refresh_encryption_key: "DaNjI20sbHAZBy3h86xCoTfMleidWELw"
 
@@ -80,18 +77,3 @@ tracker:
 pipeline:
   max_batch_size: 100
   max_concurrent_rpcs: 100
-
-# Social Configuration
-social:
-  steam:
-    publisher_key: ""
-    app_id: 0
-
-# Runtime Parameters
-runtime_params:
-  env:
-    - name: "SUPABASE_URL"
-      value: "https://atojskxrxfsbpeefigtm.supabase.co"
-    - name: "SUPABASE_ANON_KEY"
-      value: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF0b2pza3hyeGZzYnBlZWZpZ3RtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwMTkwOTYsImV4cCI6MjA5MTU5NTA5Nn0.vp68iI-RKxchZl67uxsdkbMneu_pFrCFC1H2SDNmgkY
-"
