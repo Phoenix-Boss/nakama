@@ -5,7 +5,7 @@
 # Database Configuration
 database:
   address:
-    - "postgres.atojskxrxfsbpeefigtm:l6TuVaUiqmhWbbVO@aws-0-eu-west-1.pooler.supabase.com:6543/postgres?sslmode=require"
+    - "postgres.atojskxrxfsbpeefigtm:l6TuVaUiqmhWbbVO@aws-0-eu-west-1.pooler.supabase.com:5432/postgres?sslmode=require"
   conn_pool_max_size: 20
   conn_pool_min_size: 5
 
@@ -29,12 +29,12 @@ http:
   read_timeout_ms: 5000
   idle_timeout_ms: 60000
 
-# Session Configuration
+# Session Configuration - USING DIFFERENT KEYS!
 session:
   token_expiry_seconds: 7200
   refresh_token_expiry_seconds: 604800
   encryption_key: "DaNjI20sbHAZBy3h86xCoTfMleidWELw"
-  refresh_encryption_key: "DaNjI20sbHAZBy3h86xCoTfMleidWELw"
+  refresh_encryption_key: "ReFrEsHKeY2024Sup3rSecure7890!@#$%"
 
 # Console Configuration
 console:
@@ -44,16 +44,16 @@ console:
   allowed_origins:
     - "*"
 
-# Logger Configuration
+# Logger Configuration - REMOVED file logging to avoid directory issues
 logger:
   level: "INFO"
   stdout: true
-  file: "/nakama/data/logs/nakama.log"
+  # file: "/nakama/data/logs/nakama.log"  # Removed - causes directory issues
 
 # Metrics Configuration
 metrics:
   port: 9102
-  enabled: true
+  enabled: false  # Disabled for simpler setup
 
 # Match Configuration
 match:
