@@ -1,11 +1,97 @@
-﻿database:
+# ============================================
+# Nakama Production Configuration
+# ============================================
+
+# Database Configuration
+database:
   address:
     - "postgres.atojskxrxfsbpeefigtm:l6TuVaUiqmhWbbVO@aws-0-eu-west-1.pooler.supabase.com:6543/postgres?sslmode=require"
+  conn_pool_max_size: 20
+  conn_pool_min_size: 5
 
+# Runtime Configuration
 runtime:
   path: "/nakama/data/modules"
   js_entrypoint: "index.js"
+  js_cache: true
+  env:
+    - name: "NAKAMA_ENV"
+      value: "production"
 
+# Socket Configuration
+socket:
+  server_key: "DaNjI20sbHAZBy3h86xCoTfMleidWELw"
+  port: 7350
+  max_message_size_bytes: 4096
+
+# HTTP Configuration
+http:
+  port: 7350
+  max_body_size: 3145728  # 3MB
+  write_timeout_ms: 5000
+  read_timeout_ms: 5000
+  idle_timeout_ms: 60000
+
+# Session Configuration
+session:
+  token_expiry_seconds: 7200  # 2 hours
+  refresh_token_expiry_seconds: 604800  # 7 days
+  encryption_key: "DaNjI20sbHAZBy3h86xCoTfMleidWELw"
+  refresh_encryption_key: "DaNjI20sbHAZBy3h86xCoTfMleidWELw"
+
+# Console Configuration
+console:
+  username: "admin"
+  password: "DaNjI20sbHAZBy3h86xCoTfMleidWELw"
+  port: 7351
+  allowed_origins:
+    - "*"
+
+# Logger Configuration
 logger:
   level: "INFO"
   stdout: true
+  file: "/nakama/data/logs/nakama.log"
+
+# Metrics Configuration
+metrics:
+  port: 9102
+  enabled: true
+
+# Match Configuration
+match:
+  min: 1
+  max: 64
+  min_presence: 1
+  max_presence: 64
+
+# Leaderboard Configuration
+leaderboard:
+  cache_max_size: 10000
+  cache_expiry_seconds: 60
+  rank_cache_expiry_seconds: 60
+
+# Tracker Configuration
+tracker:
+  max_presence: 100000
+  max_events: 1000
+
+# Pipeline Configuration
+pipeline:
+  max_batch_size: 100
+  max_concurrent_rpcs: 100
+
+# Social Configuration
+social:
+  steam:
+    publisher_key: ""
+    app_id: 0
+
+# Runtime Parameters
+runtime_params:
+  env:
+    - name: "SUPABASE_URL"
+      value: "https://atojskxrxfsbpeefigtm.supabase.co"
+    - name: "SUPABASE_ANON_KEY"
+      value: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF0b2pza3hyeGZzYnBlZWZpZ3RtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwMTkwOTYsImV4cCI6MjA5MTU5NTA5Nn0.vp68iI-RKxchZl67uxsdkbMneu_pFrCFC1H2SDNmgkY
+"
